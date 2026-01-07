@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #000;
+  background-color: #000; /* 기본 배경 완전 검정 */
 }
 
 .container {
@@ -22,10 +22,17 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  background-color: #000; /* 컨테이너도 검정 */
 }
 
+/* iframe (3D 화면) 스타일 수정 */
 iframe {
-  display: block; /* iframe 하단 공백 제거 */
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  /* ✨ 핵심 수정: 밝기를 살짝 낮추고 대비를 높여서 회색기를 없애고 검정색을 더 진하게 만듦 */
+  filter: brightness(0.85) contrast(1.2);
 }
 
 /* GitHub 버튼 스타일 */
@@ -40,7 +47,8 @@ iframe {
   justify-content: center;
   gap: 10px;
   
-  background-color: #1a1a1a;
+  /* ✨ 배경색 수정: 회색(#1a1a1a) -> 완전 검정(#000) */
+  background-color: #000;
   color: #fff;
   text-decoration: none;
   font-family: 'Pretendard', sans-serif;
@@ -49,16 +57,19 @@ iframe {
   
   padding: 10px 20px;
   border-radius: 30px;
+  
+  /* 테두리를 아주 연한 회색으로 줘서 검정 배경에서도 버튼이 구분되게 함 */
   border: 1px solid #333;
   
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.8); /* 그림자도 더 진하게 */
 }
 
 .github-btn:hover {
-  background-color: #333;
+  background-color: #222; /* 호버 시 살짝 밝아짐 */
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+  box-shadow: 0 6px 15px rgba(0,0,0,1);
+  border-color: #555;
 }
 
 .github-btn svg {
